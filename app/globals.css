@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@import "../styles/document.css";
+
+@theme inline {
+  --font-serif: var(--font-crimson);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--doc-viewer-bg);
+  color: var(--doc-color-text);
+  font-family: var(--doc-font-body);
+}
