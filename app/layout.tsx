@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Crimson_Text, Geist_Mono } from "next/font/google";
+import { RybenaProvider } from "@/components/RybenaProvider";
 import "./globals.css";
 
 const crimson = Crimson_Text({
@@ -30,7 +31,10 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${crimson.variable} ${geistMono.variable} antialiased`}
     >
-      <body>{children}</body>
+      <body>
+        {children}
+        <RybenaProvider />
+      </body>
     </html>
   );
 }
