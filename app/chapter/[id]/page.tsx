@@ -3,6 +3,7 @@ import { getChapterById, getAllChapterIds } from '@/lib/content-utils';
 import { documentMeta } from '@/content/metadata';
 import { DocumentViewer } from '@/components/document/DocumentViewer';
 import { paginateElements } from '@/lib/pagination';
+import { ChapterChart } from '@/components/charts/ChapterChart';
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -45,6 +46,8 @@ export default async function ChapterPage({ params }: PageProps) {
       pages={dynamicallyPaginatedPages} 
       chapterTitle={chapter.title} 
       documentTitle={documentMeta.title} 
-    />
+    >
+      <ChapterChart chapterId={chapter.id} elements={allElements} />
+    </DocumentViewer>
   );
 }

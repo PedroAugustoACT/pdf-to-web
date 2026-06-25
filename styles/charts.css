@@ -1,0 +1,54 @@
+/* === Chart Containers === */
+/* Additive styles for chart sections appended after paginated document content. */
+/* Uses existing design tokens from document.css — no overrides. */
+
+.chart-section {
+  width: var(--doc-page-width);
+  max-width: 100%;
+  background-color: var(--doc-page-bg);
+  box-shadow: var(--doc-page-shadow);
+  padding: 32px var(--doc-page-margin-left) 40px var(--doc-page-margin-left);
+  box-sizing: border-box;
+}
+
+.chart-section__title {
+  font-family: var(--doc-font-heading);
+  font-size: var(--doc-font-size-h3);
+  font-weight: 600;
+  color: var(--doc-color-heading);
+  margin: 0 0 6px 0;
+  line-height: 1.4;
+}
+
+.chart-section__subtitle {
+  font-family: var(--doc-font-body);
+  font-size: 10pt;
+  color: var(--doc-color-muted);
+  margin: 0 0 24px 0;
+  line-height: 1.5;
+}
+
+.chart-section__body {
+  width: 100%;
+  min-height: 280px;
+}
+
+/* Responsive: scale chart section like doc-page on narrow viewports */
+@media (max-width: 859px) {
+  .chart-section {
+    transform: scale(calc(100vw / 820));
+    transform-origin: top center;
+    margin-bottom: calc(-1 * (1 - calc(100vw / 820)) * 380px);
+  }
+}
+
+/* Print: match document page printing behavior */
+@media print {
+  .chart-section {
+    box-shadow: none;
+    border: none;
+    page-break-inside: avoid;
+    transform: none !important;
+    margin: 0 !important;
+  }
+}

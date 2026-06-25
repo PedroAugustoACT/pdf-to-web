@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "../styles/document.css";
+@import "../styles/charts.css";
 
 @theme inline {
   --font-serif: var(--font-crimson);
